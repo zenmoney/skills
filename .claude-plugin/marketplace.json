@@ -1,0 +1,14 @@
+{
+  "name": "zenmoney",
+  "owner": {
+    "name": "Zenmoney",
+    "url": "https://zenmoney.app"
+  },
+  "description": "Zenmoney plugins for Claude",
+  "plugins": [
+    {
+      "name": "zenmoney",
+      "source": "./"
+    }
+  ]
+}
