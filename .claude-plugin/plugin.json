@@ -20,11 +20,5 @@
     "subscriptions",
     "cash-flow",
     "zenmoney"
-  ],
-  "mcpServers": {
-    "zenmoney": {
-      "type": "http",
-      "url": "https://api.zenmoney.app/mcp"
-    }
-  }
+  ]
 }
