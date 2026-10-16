@@ -8,8 +8,8 @@
     "url": "https://zenmoney.app"
   },
   "homepage": "https://zenmoney.app",
-  "documentationUrl": "https://github.com/zenmoney/ZenPlugins/wiki/Zenmoney-MCP",
-  "supportUrl": "https://github.com/zenmoney/ZenPlugins/wiki/Zenmoney-MCP#help-and-privacy",
+  "documentationUrl": "https://github.com/zenmoney/skills/blob/main/docs/zenmoney-mcp.md",
+  "supportUrl": "https://github.com/zenmoney/skills/blob/main/docs/zenmoney-mcp.md#help-and-privacy",
   "privacyPolicyUrl": "https://zenmoney.app/legal/privacy/",
   "termsOfServiceUrl": "https://zenmoney.app/legal/terms/",
   "icon": "./assets/logo.png",
