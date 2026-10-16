@@ -12,6 +12,7 @@
   "supportUrl": "https://github.com/zenmoney/ZenPlugins/wiki/Zenmoney-MCP#help-and-privacy",
   "privacyPolicyUrl": "https://zenmoney.app/legal/privacy/",
   "termsOfServiceUrl": "https://zenmoney.app/legal/terms/",
+  "icon": "./assets/logo.png",
   "license": "MIT",
   "keywords": [
     "personal-finance",

@@ -10,6 +10,7 @@
   "homepage": "https://zenmoney.app",
   "repository": "https://github.com/zenmoney/skills",
   "license": "MIT",
+  "logo": "assets/logo.png",
   "keywords": [
     "personal-finance",
     "budgeting",
