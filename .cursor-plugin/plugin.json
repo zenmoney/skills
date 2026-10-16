@@ -1,0 +1,23 @@
+{
+  "name": "zenmoney",
+  "displayName": "Zenmoney: personal finance",
+  "version": "0.1.0",
+  "description": "Your finances in Cursor: automatic bank sync across the EU, plus daily, weekly and monthly briefs on what's changed, what's coming up and what needs your attention",
+  "author": {
+    "name": "Zenmoney",
+    "email": "support@zenmoney.app"
+  },
+  "homepage": "https://zenmoney.app",
+  "repository": "https://github.com/zenmoney/skills",
+  "license": "MIT",
+  "keywords": [
+    "personal-finance",
+    "budgeting",
+    "expenses",
+    "subscriptions",
+    "cash-flow",
+    "zenmoney"
+  ],
+  "category": "integrations",
+  "mcpServers": "./.mcp.json"
+}

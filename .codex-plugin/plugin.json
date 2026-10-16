@@ -1,0 +1,41 @@
+{
+  "name": "zenmoney",
+  "version": "0.1.0",
+  "description": "Your finances in Codex: automatic bank sync across the EU, plus daily, weekly and monthly briefs on what's changed, what's coming up and what needs your attention",
+  "author": {
+    "name": "Zenmoney",
+    "url": "https://zenmoney.app"
+  },
+  "homepage": "https://zenmoney.app",
+  "repository": "https://github.com/zenmoney/skills",
+  "license": "MIT",
+  "keywords": [
+    "personal-finance",
+    "budgeting",
+    "expenses",
+    "subscriptions",
+    "cash-flow",
+    "zenmoney"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Zenmoney: personal finance",
+    "shortDescription": "Personal finance with automatic bank sync",
+    "longDescription": "Zenmoney is a personal finance app and expense tracker with automatic bank sync across the EU and Eastern Europe. Ask about your spending, budget and savings, add or edit transactions, and get daily, weekly and monthly briefs on what's changed, what's coming up and what needs your attention.",
+    "developerName": "Zenmoney",
+    "category": "Finance",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://zenmoney.app",
+    "privacyPolicyURL": "https://zenmoney.app/legal/privacy/",
+    "termsOfServiceURL": "https://zenmoney.app/legal/terms/",
+    "defaultPrompt": [
+      "Give me my daily financial brief",
+      "Why am I running out of money faster than usual?",
+      "Can I afford a new laptop without dipping into my savings?"
+    ]
+  }
+}
