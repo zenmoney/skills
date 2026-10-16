@@ -36,6 +36,9 @@
       "Give me my daily financial brief",
       "Why am I running out of money faster than usual?",
       "Can I afford a new laptop without dipping into my savings?"
-    ]
+    ],
+    "brandColor": "#EC433D",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
   }
 }
