@@ -21,7 +21,6 @@
     "cash-flow",
     "zenmoney"
   ],
-  "skills": "./skills/zenmoney/",
   "mcpServers": {
     "zenmoney": {
       "type": "http",

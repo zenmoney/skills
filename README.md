@@ -19,8 +19,8 @@ Then run `/mcp`, pick `zenmoney`, and sign in to your Zenmoney account.
 
 ## Repository layout
 
-- `skills/zenmoney/`: the skills and the plugin's README
-- `.claude-plugin/`: the Claude plugin manifest and marketplace
+- `skills/zenmoney/`: the Zenmoney plugin, with its manifest in `.claude-plugin/plugin.json` and its skills in `skills/`
+- `.claude-plugin/marketplace.json`: the marketplace that lists the plugin
 
 ## License
 

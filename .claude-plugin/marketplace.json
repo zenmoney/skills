@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "zenmoney",
-      "source": "./"
+      "source": "./skills/zenmoney"
     }
   ]
 }
