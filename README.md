@@ -29,6 +29,16 @@ Add or edit transactions, leave notes on payments, categorise stray expenses, se
 
 You need a Zenmoney account with an active subscription. Connect your banks or add transactions in Zenmoney first.
 
+### Codex
+
+```
+codex plugin marketplace add zenmoney/skills
+codex plugin add zenmoney@zenmoney
+codex mcp login zenmoney
+```
+
+The last command signs you in to your Zenmoney account. In Codex, your financial data is processed by OpenAI under its terms and your privacy settings there.
+
 ## Data and privacy
 
 - The plugin contains no scripts, hooks, or other code. It adds the Zenmoney connector, which Claude reaches at `https://api.zenmoney.app/mcp`, and the Financial Brief skill, which is a set of instructions for Claude.
@@ -36,6 +46,15 @@ You need a Zenmoney account with an active subscription. Connect your banks or a
 - Claude can read your accounts, balances, transactions, categories, merchants, budgets, and planned payments. When you ask, it can also add, edit, or delete transactions and update accounts and categories in Zenmoney. The financial brief only reads your data.
 - Your financial data is processed by Claude under Anthropic's terms and your Claude privacy settings.
 - To stop access, open Zenmoney under **Connectors** in Claude and disconnect it. To revoke every existing Zenmoney authorization, change your Zenmoney password.
+
+## Troubleshooting
+
+- **Zenmoney won't connect.** Check that your Zenmoney subscription is active, then reconnect: in Claude, disconnect Zenmoney under **Connectors** and connect it again; in Codex, run `codex mcp login zenmoney`.
+- **Transactions are missing, or the brief says it can't confirm your data is up to date.** The connector doesn't sync your banks. Refresh your bank data in the Zenmoney app, then ask again.
+- **A large request fails.** Ask about a shorter period.
+- **The brief doesn't arrive on schedule.** Scheduled briefs need an app that supports scheduled tasks. If Claude says it can't create one, ask for the brief when you need it: "Give me my weekly financial brief."
+
+If none of these help, contact support.
 
 ## Support
 

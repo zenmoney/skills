@@ -1,0 +1,17 @@
+{
+  "name": "zenmoney",
+  "owner": {
+    "name": "Zenmoney",
+    "email": "support@zenmoney.app"
+  },
+  "metadata": {
+    "description": "Zenmoney plugins for Cursor"
+  },
+  "plugins": [
+    {
+      "name": "zenmoney",
+      "source": "./",
+      "description": "Your finances in Cursor: automatic bank sync across the EU, plus daily, weekly and monthly briefs on what's changed, what's coming up and what needs your attention"
+    }
+  ]
+}
