@@ -1,5 +1,5 @@
 ---
-name: brief
+name: financial-brief
 description: Financial Brief — a short, prioritised briefing on the user's Zenmoney finances for a daily, weekly, or monthly horizon. It covers risks to act on now (fees, overdrafts, uncovered or missed payments, duplicate or suspicious charges, cash shortfalls), upcoming obligations, and an overview of the completed month. Use when the user asks to run the Financial Brief or to get it on a schedule, when a scheduled task passes delivery_cadence, and whenever the user asks for a daily, weekly, or monthly financial summary, what in their finances needs attention, or whether upcoming payments are covered (for example "Run Financial Brief", "финансовый бриф", "что важного по деньгам?", "brief finansowy", "resumen financiero de la semana"). Requires the Zenmoney connector.
 ---
 
