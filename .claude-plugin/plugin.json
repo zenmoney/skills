@@ -1,0 +1,31 @@
+{
+  "name": "zenmoney",
+  "displayName": "Zenmoney: personal finance",
+  "version": "0.1.0",
+  "description": "Your finances in Claude: automatic bank sync across the EU, plus daily, weekly and monthly briefs on what's changed, what's coming up and what needs your attention",
+  "author": {
+    "name": "Zenmoney",
+    "url": "https://zenmoney.app"
+  },
+  "homepage": "https://zenmoney.app",
+  "documentationUrl": "https://github.com/zenmoney/ZenPlugins/wiki/Zenmoney-MCP",
+  "supportUrl": "https://github.com/zenmoney/ZenPlugins/wiki/Zenmoney-MCP#help-and-privacy",
+  "privacyPolicyUrl": "https://zenmoney.app/legal/privacy/",
+  "termsOfServiceUrl": "https://zenmoney.app/legal/terms/",
+  "license": "MIT",
+  "keywords": [
+    "personal-finance",
+    "budgeting",
+    "expenses",
+    "subscriptions",
+    "cash-flow",
+    "zenmoney"
+  ],
+  "skills": "./skills/zenmoney/",
+  "mcpServers": {
+    "zenmoney": {
+      "type": "http",
+      "url": "https://api.zenmoney.app/mcp"
+    }
+  }
+}
