@@ -21,7 +21,7 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Zenmoney: personal finance",
-    "shortDescription": "Personal finance with automatic bank sync",
+    "shortDescription": "Personal finance w/ bank sync",
     "longDescription": "Zenmoney is a personal finance app and expense tracker with automatic bank sync across the EU and Eastern Europe. Ask about your spending, budget and savings, add or edit transactions, and get daily, weekly and monthly briefs on what's changed, what's coming up and what needs your attention.",
     "developerName": "Zenmoney",
     "category": "Finance",
@@ -30,6 +30,7 @@
       "Write"
     ],
     "websiteURL": "https://zenmoney.app",
+    "supportURL": "https://github.com/zenmoney/skills/blob/main/docs/zenmoney-mcp.md#help-and-privacy",
     "privacyPolicyURL": "https://zenmoney.app/legal/privacy/",
     "termsOfServiceURL": "https://zenmoney.app/legal/terms/",
     "defaultPrompt": [
