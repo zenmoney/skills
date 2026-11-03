@@ -6,14 +6,16 @@ Zenmoney gives your AI assistant access to financial data from the accounts you 
 
 The connector gives your assistant access to data stored in Zenmoney. It can analyze your records and, when you ask, add, edit, or delete transactions and manage accounts and categories. It cannot move money or make payments.
 
-## Connect to Claude
+## Connect
 
-To use the connector, you need a [Zenmoney account](https://zenmoney.app/) with an **active subscription**. Connect your banks or add transactions in Zenmoney first.
+To use Zenmoney with Claude or ChatGPT, you need a [Zenmoney account](https://zenmoney.app/) with an **active subscription**. Connect your banks or add transactions in Zenmoney first.
 
-1. Open **Customize → Connectors** and search for **Zenmoney** in the connector directory.
-2. Select Zenmoney and click **Connect**.
-3. Sign in to Zenmoney and approve access.
-4. Enable Zenmoney in your chat under **+ → Connectors**.
+1. Open the plugins or connectors section in your AI app.
+2. Find Zenmoney in the directory and add it.
+3. Follow the connection prompts, sign in to Zenmoney, and approve access.
+4. Start a new chat or enable Zenmoney for the current conversation if your app requires it.
+
+If Zenmoney is not available in your directory and your app and workspace support custom remote MCP connections, add `https://api.zenmoney.app/mcp` and sign in to Zenmoney.
 
 Try: “Show my current Zenmoney account balances.”
 
@@ -61,7 +63,11 @@ Write tools change your Zenmoney records and are meant to be used only when you 
 
 ## Disconnect
 
-In Claude, open Zenmoney under **Connectors** and disconnect or remove it. This stops future access but does not delete data already shared in your chats.
+Open Zenmoney’s connection settings in your AI app and disconnect your Zenmoney account.
+
+Disconnecting stops future access through that connection. It does not delete your Zenmoney records or financial data already shared in chats.
+
+To remove the plugin and its skills as well, uninstall it. Uninstalling a plugin does not automatically disconnect its account connection.
 
 To revoke all existing Zenmoney authorizations, change your Zenmoney password.
 
@@ -75,4 +81,4 @@ To revoke all existing Zenmoney authorizations, change your Zenmoney password.
 
 [Privacy Policy](https://zenmoney.app/legal/privacy/)
 
-Last updated: October 7, 2026.
+Last updated: November 3, 2026.
