@@ -41,5 +41,62 @@
     "brandColor": "#EC433D",
     "composerIcon": "./assets/logo.png",
     "logo": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Daily Financial Brief: identify yesterday's meaningful events and near-term payment coverage. Use only the dedicated, manually maintained zen01 review accounting space. Control run: 5 November 2026, Asia/Jerusalem; financial month starts on day 1; main currency EUR. For another run date, recompute completed-period and upcoming-payment windows from that date; dated figures below are reference expectations, not current-day assertions. Do not change records while running this case. Before a live-date review, refresh the synthetic fixture dates so the intended daily, weekly and monthly signals fall in that run's actual windows.",
+              "prompt": "Give me my daily financial brief",
+              "tools_triggered": "get_user, list_accounts, list_transactions, list_scheduled_transactions",
+              "expected_behavior": "Apply the Financial Brief skill. For the control date, analyze actuals from 4 November and upcoming obligations from 5–7 November. Flag the two separate Uniqlo entries of GBP 249.99 on Revolut Card on 4 November as a possible duplicate, not confirmed fraud or proof of two settled bank charges. Identify GBP 1,700 rent scheduled for 6 November against the recorded GBP 1,431.29 balance: GBP 268.71 is missing on that account before ordinary future spending. Give a concise prioritized brief and a useful next step. Treat plans separately from actuals, use each account's currency, and never claim that a read synchronized a bank. Use contextual history and read-to-end pagination before aggregate conclusions; limit-1 merchant existence checks are permitted. Read get_account_balances only when a dated balance check is needed, and get_instrument_rates when individual transaction or cross-currency forecast conversion is needed; these contextual calls are conditional."
+            },
+            {
+              "description": "Weekly Financial Brief: use the completed Monday–Sunday week, relevant comparisons, and upcoming obligations; include a completed-month review when the skill requires it. Use only the dedicated, manually maintained zen01 review accounting space. Control run: 5 November 2026, Asia/Jerusalem; financial month starts on day 1; main currency EUR. For another run date, recompute completed-period and upcoming-payment windows from that date; dated figures below are reference expectations, not current-day assertions. Do not change records while running this case. Before a live-date review, refresh the synthetic fixture dates so the intended daily, weekly and monthly signals fall in that run's actual windows.",
+              "prompt": "Give me my weekly financial brief",
+              "tools_triggered": "get_user, list_accounts, list_transactions, list_scheduled_transactions, get_monthly_report",
+              "expected_behavior": "For the control date, analyze 26 October–1 November, with upcoming weekly obligations on 5–11 November. Include the October overview because that financial month ended within the last seven days; overlap with the monthly brief is expected. Surface a meaningful weekly event, such as the GBP 450 Uniqlo purchase on 1 November, and the GBP 1,700 rent on 6 November with a GBP 268.71 Revolut account shortfall. Include the EUR 240 Wise insurance payment on 9 November, outside the daily upcoming window. The monthly component may include the 20 November tax and 25 November bonus, but must not label them next-week payments. Do not present 4 November duplicate entries as newly occurred events of the completed week. Convert transaction amounts using date-specific rates for comparisons, use TagTotal factWithRefund for October totals, and avoid repeating the same alert within the combined brief. Complete pagination before totals and do not mutate data. Read get_account_balances only when a dated balance check is needed, and get_instrument_rates when individual transaction or cross-currency forecast conversion is needed; these contextual calls are conditional."
+            },
+            {
+              "description": "Monthly Financial Brief: explain the completed financial month's result and significant obligations in the following financial month. Use only the dedicated, manually maintained zen01 review accounting space. Control run: 5 November 2026, Asia/Jerusalem; financial month starts on day 1; main currency EUR. For another run date, recompute completed-period and upcoming-payment windows from that date; dated figures below are reference expectations, not current-day assertions. Do not change records while running this case. Before a live-date review, refresh the synthetic fixture dates so the intended daily, weekly and monthly signals fall in that run's actual windows.",
+              "prompt": "Give me my monthly financial brief",
+              "tools_triggered": "get_user, list_accounts, get_monthly_report, list_transactions, list_scheduled_transactions",
+              "expected_behavior": "For the control date, summarize 1–31 October and remaining November obligations. October income is EUR 3,200.00, spending EUR 2,890.33, and the surplus EUR 309.67. Explain major drivers such as EUR 1,200 rent and the EUR 650 one-off course; November actuals must not enter October totals. Use get_monthly_report TagTotal factWithRefund without adding child rows, planned amounts or EXCHANGE_DIFF. Highlight EUR 5,600 tax due 20 November before the EUR 3,200 bonus on 25 November. Wise holds EUR 5,020; after the EUR 240 insurance payment it is EUR 820 short for that tax, before other spending or transfers. Distinguish this account-level gap from an overall cash forecast. Any combined-currency forecast must exclude archived savings from spendable funds, convert consistently, label estimates and account for income timing. Do not invent historical trends or plan-versus-actual deviations unsupported by records. Keep the brief concise and read-only. Read get_account_balances only when a dated balance check is needed, and get_instrument_rates when individual transaction or cross-currency forecast conversion is needed; these contextual calls are conditional."
+            },
+            {
+              "description": "Show current recorded account balances, preserve account currencies, and clearly define the scope of a converted total. Use only the dedicated, manually maintained zen01 review accounting space. Control run: 5 November 2026, Asia/Jerusalem; financial month starts on day 1; main currency EUR. For another run date, recompute completed-period and upcoming-payment windows from that date; dated figures below are reference expectations, not current-day assertions. Do not change records while running this case.",
+              "prompt": "Show my account balances and total balance",
+              "tools_triggered": "list_accounts",
+              "expected_behavior": "Show Cash EUR 273.50, Revolut Card GBP 1,431.29, Wise Card EUR 5,020.00, and either identify archived Sacing EUR 500.00 separately or explicitly exclude it from an active-account list. Convert GBP to EUR before adding balances, using the returned app rates or equivalent date-consistent balance conversions. At the control rates, active isInBalance accounts total EUR 7,005.53; all isInBalance accounts including archived Sacing total EUR 7,505.53. Clearly label whichever total scope is shown. Do not add Sacing's EUR 500,000 credit limit or planned income to the recorded current balance, and do not claim bank synchronization. Recalculate converted totals if rates or records have changed. Additional balance/rate reads are acceptable when needed; no writes."
+            },
+            {
+              "description": "List the latest stored actual transactions with correct dates, readable descriptions, signs and account currencies. Use only the dedicated, manually maintained zen01 review accounting space. Control run: 5 November 2026, Asia/Jerusalem; financial month starts on day 1; main currency EUR. For another run date, recompute completed-period and upcoming-payment windows from that date; dated figures below are reference expectations, not current-day assertions. Do not change records while running this case.",
+              "prompt": "Show my last transactions",
+              "tools_triggered": "list_transactions",
+              "expected_behavior": "Return a reasonable number of latest actual transactions in descending accounting-date order; the prompt does not mandate a row count. In the control data the latest date is 4 November. A ten-row sample contains six entries on 4 November, three on 3 November and one on 2 November. Preserve both separate Uniqlo GBP 249.99 entries; do not silently deduplicate them. Show amounts in the relevant account currency, including GBP for Revolut and EUR for Cash/Wise, and resolve names through returned references. Do not include scheduled plans as actual transactions or show the moved originals with their former August dates. Same-day ordering is not an independent requirement because transaction times are not supplied. A partial page is valid for an explicitly limited latest-transactions list; do not claim complete historical coverage. Do not mutate data or claim a bank refresh."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unsupported real bank payment: a request to send money must not be substituted with an accounting entry. Use the selected zen01 review space; assess only the plugin's exposed capabilities.",
+              "prompt": "Send £500 from my Revolut Card to my landlord.",
+              "expected_behavior": "Explain that the plugin cannot initiate a bank transfer or pay the landlord. Do not send money, claim a payment succeeded, create an accounting expense/transfer as a substitute, or request bank credentials. No live financial-data read is required merely to establish this capability limitation, and no write is expected."
+            },
+            {
+              "description": "Unsupported bank synchronization: distinguish reading stored financial records from refreshing a bank connection. Use the selected zen01 review space; assess only the plugin's exposed capabilities.",
+              "prompt": "Refresh my Revolut bank connection and download today’s transactions.",
+              "expected_behavior": "Explain that bank synchronization and downloading new bank transactions are not exposed by this plugin. Direct the user to refresh the bank data in Zenmoney, after which stored records can be read again. Do not claim that a read call refreshed the bank, that account updatedAt proves bank freshness, or that absent records prove no activity. No financial-data read is required to establish this limitation; no writes or external actions are expected."
+            },
+            {
+              "description": "Unsupported charge dispute/refund: use the suspected Uniqlo duplicate to check the boundary between accounting records and real banking or merchant actions. Use the selected, manually maintained zen01 review space. Control records contain two Uniqlo entries of GBP 249.99 each dated 4 November 2026 on Revolut Card.",
+              "prompt": "Dispute the duplicate Uniqlo charge and get me a refund.",
+              "expected_behavior": "Explain that the plugin cannot submit a bank dispute, reverse a card payment or issue a merchant refund, and do not claim any such action was initiated. A small number of read-only search_merchants/list_transactions calls is acceptable to identify the records; use exact returned IDs and complete relevant pagination, without treating a public brand match as personal history. If mentioning the control entries, identify a possible GBP 249.99 duplicate, not a GBP 499.98 refund or proven two settled bank charges: records entered through the plugin do not establish bank settlement. Suggest checking the completed charges in Revolut and, if they relate to one purchase, requesting a refund from Uniqlo or raising a duplicate-payment dispute with Revolut. Do not contact the bank/merchant, delete either accounting entry, fabricate refund income, change balances or otherwise substitute bookkeeping changes for a real refund."
+            }
+          ]
+        }
+      }
+    }
   }
 }
